@@ -14,7 +14,7 @@
  }
  .pics { 
     
-     
+     position: relative;
      overflow: hidden;
  }
  
