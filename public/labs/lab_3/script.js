@@ -1,5 +1,5 @@
 /* Put your javascript in here */
-document.addEventListener('onclick', (event) => {
+document.addEventListener('onclick', () => {
   const listElems = document.querySelectorAll('.pics img');
   const array1 = Array.from(listElems);
   let currentpos = 0;
@@ -15,7 +15,7 @@ document.addEventListener('onclick', (event) => {
     current.style.marginLeft = `${currentpos}px`;
   }
   function nextFunc() {
-    array1.forEach(myFunction1);
+    array1.forEach(myFunction1());
   }
 
   
@@ -24,7 +24,7 @@ document.addEventListener('onclick', (event) => {
     current.style.marginLeft = `${currentpos}px`;
   }
   function prevFunc() {
-    array1.forEach(myFunction2);
+    array1.forEach(myFunction2());
   }
 
   next.addEventListener('click', () => {
