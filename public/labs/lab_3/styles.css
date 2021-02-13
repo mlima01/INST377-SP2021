@@ -27,7 +27,6 @@ body {
 .pics img{ 
     width: 130px;
     height: 130px;
-    overflow: hidden;
     padding: 10px;
     display: block;
 
