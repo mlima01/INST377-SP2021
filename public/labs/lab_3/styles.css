@@ -13,4 +13,8 @@ li {
 img {
     display: block;
 }
+
+ul{
+    transform: translateX()
+}
  
