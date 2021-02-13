@@ -2,6 +2,12 @@
  https://javascript.info/introduction-browser-events */
  
  .carousel{
+    position: relative;
+ }
+ .arrowprev{
+     display: block;
+ }
+ .pics{
      position: fixed;
  }
  
@@ -17,4 +23,7 @@ img {
 ul{
     transform: translateX()
 }
- 
+
+.arrownext{
+    display: block;
+}
