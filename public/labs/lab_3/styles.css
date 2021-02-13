@@ -40,5 +40,6 @@ ul{
 .arrownext{
     display: block;
     position: relative;
+    right: 7px;
     
 }
