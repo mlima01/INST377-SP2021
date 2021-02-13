@@ -3,6 +3,7 @@
  
  .carousel{
     position: relative;
+    background: rgb(145, 216, 245);
  }
  .arrowprev{
      display: block;
