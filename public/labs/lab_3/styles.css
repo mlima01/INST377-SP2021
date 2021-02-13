@@ -7,8 +7,9 @@
 
 #firstdiv{
     
-    position: fixed;
+    position: relative;
     background: rgb(145, 216, 245);
+    width: 600px;
     overflow: hidden;
     padding: 10px;
  
