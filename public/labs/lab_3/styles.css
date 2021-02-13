@@ -24,7 +24,7 @@ img {
 }
 
 ul{
-    transform: translateX()
+    transition: margin-left 250ms;
 }
 
 .arrownext{
