@@ -14,12 +14,12 @@
  }
  .pics { 
     
-     position: relative;
+     display: flex;
      overflow: hidden;
  }
  
 
-li {
+li img{
     display: inline-block;
 }
 
