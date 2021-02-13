@@ -2,5 +2,6 @@
  https://javascript.info/introduction-browser-events */
  .pics{
     width: 390px;
+    position: relative;
     overflow: hidden;
   }
