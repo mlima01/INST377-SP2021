@@ -32,6 +32,6 @@ ul{
 
 .arrownext{
     display: block;
-    position: absolute;
+    position: relative;
     
 }
