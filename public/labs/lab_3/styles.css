@@ -8,9 +8,9 @@
 #firstdiv{
     
     position: fixed;
-    width: 398px;
     background: rgb(145, 216, 245);
     overflow: hidden;
+    padding: 10px;
  
 }
 
