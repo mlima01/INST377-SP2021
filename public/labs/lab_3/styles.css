@@ -5,7 +5,9 @@
     
     position: fixed;
     background: rgb(145, 216, 245);
- }
+    overflow: hidden;
+ 
+}
  .arrowprev {
      display: block;
      position: absolute;
@@ -28,10 +30,11 @@ img {
 
 ul{
     transition: margin-left 250ms;
+    overflow: hidden;
 }
 
 .arrownext{
     display: block;
-    position: relative;
+    position: absolute;
     
 }
