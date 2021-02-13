@@ -8,25 +8,28 @@
     overflow: hidden;
  
 }
- .arrowprev {
+
+.arrowprev {
      display: block;
      position: absolute;
  }
- .pics { 
+
+.pics { 
     
      display: flex;
      overflow: hidden;
  }
- 
-
-li {
-    display: inline-block;
-}
 
 img {
     display: block;
     
 }
+
+li {
+    display: inline-block;
+}
+
+
 
 ul{
     transition: margin-left 250ms;
