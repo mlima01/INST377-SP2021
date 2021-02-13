@@ -8,8 +8,7 @@ document.addEventListener('onclick', () => {
   const pos = width * count;
   const next = document.querySelector('.arrownext');
   const prev = document.querySelector('.arrowprev');
-
-  
+ 
   function myFunction1() {
     currentpos += pos;
     img.style.marginLeft = `${currentpos}px`;
