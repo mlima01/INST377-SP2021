@@ -6,12 +6,8 @@
  }
  
 
-li{
+li {
     display: inline-block;
 
 }
- .pics{
-    width: 390px;
-    position: relative;
-    overflow: hidden;
-  }
+ 
