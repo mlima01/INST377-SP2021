@@ -8,6 +8,7 @@
 #firstdiv{
     
     position: fixed;
+    width: 398px;
     background: rgb(145, 216, 245);
     overflow: hidden;
  
@@ -23,8 +24,8 @@
 }
 
 .pics img{ 
-    width: 230px;
-    height: 230px;
+    width: 130px;
+    height: 130px;
     padding: 10px;
     position: relative;
     display: block;
