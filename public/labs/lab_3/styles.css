@@ -33,7 +33,7 @@ li {
 
 ul{
     transition: margin-left 250ms;
-    overflow: hidden;
+
     list-style: none;
 }
 
