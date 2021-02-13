@@ -6,6 +6,7 @@
  }
  .arrowprev{
      display: block;
+     position: absolute;
  }
  .pics{
     
@@ -29,5 +30,6 @@ ul{
 
 .arrownext{
     display: block;
+    position: absolute;
     right: 7px;
 }
