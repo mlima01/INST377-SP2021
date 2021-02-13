@@ -8,8 +8,9 @@
      display: block;
  }
  .pics{
-     overflow: hidden;
+    
      position: fixed;
+     overflow: hidden;
  }
  
 
