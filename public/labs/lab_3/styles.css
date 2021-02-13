@@ -22,7 +22,6 @@ body {
 
 .pics { 
     
-     display: flex;
      overflow: hidden;
  }
 
