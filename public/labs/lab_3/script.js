@@ -10,18 +10,18 @@ document.addEventListener('onclick', () => {
   const prev = document.querySelector('.arrowprev');
 
   
-  function myFunction1(current) {
+  function myFunction1() {
     currentpos += pos;
-    current.style.marginLeft = `${currentpos}px`;
+    img.style.marginLeft = `${currentpos}px`;
   }
   function nextFunc() {
     array1.forEach(myFunction1());
   }
 
   
-  function myFunction2(current) {
+  function myFunction2() {
     currentpos -= pos;
-    current.style.marginLeft = `${currentpos}px`;
+    img.style.marginLeft = `${currentpos}px`;
   }
   function prevFunc() {
     array1.forEach(myFunction2());
