@@ -1,10 +1,9 @@
 /* Put your javascript in here */
+document.addEventListener('onclick',(event)=>{
+  const listElems = document.querySelectorAll('.pics img');
+  const array1 = Array.from(listElems);
+  const next = document.querySelector('.arrownext')
+  const prev = document.querySelector('.arrowprev')
 
-let listElems = document.querySelectorAll('.pics img')
-const array1 = Array.from(listElems)
 
-let position = 0;
-
-carousel.querySelector('.arrowprev').onclick = function() {
-    position += width * 2;
-}
+})
