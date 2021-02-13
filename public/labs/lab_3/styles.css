@@ -4,13 +4,13 @@
  
  
 body{
-    background-color: mintcream;
+    background-color:rgb(245, 230, 242);
 }
 
 #firstdiv{
     
     position: relative;
-    background: rgb(145, 216, 245);
+    background-color: rgb(181, 213, 255);
     width: 600px;
     overflow: hidden;
     padding: 10px;
