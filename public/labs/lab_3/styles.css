@@ -20,17 +20,18 @@ body {
      position: absolute;
  }
 
+.pics div {
+    position: fixed;
+}
+
 .pics img{ 
     
-     overflow: hidden;
-     display: block;
+    overflow: hidden;
+    display: block;
 
  }
 
-img {
-    display: block;
-    
-}
+
 
 li {
     display: inline-block;
