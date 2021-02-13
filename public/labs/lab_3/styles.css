@@ -20,9 +20,11 @@ body {
      position: absolute;
  }
 
-.pics { 
+.pics img{ 
     
      overflow: hidden;
+     display: block;
+
  }
 
 img {
