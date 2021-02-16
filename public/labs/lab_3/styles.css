@@ -2,18 +2,18 @@
  https://javascript.info/introduction-browser-events */
  
  
- 
+
 body{
     background-color:rgb(245, 230, 242);
 }
+
 
 #firstdiv{
     
     position: relative;
     background-color: rgb(181, 213, 255);
-    width: 600px;
+    width: 470px;
     overflow: hidden;
-    padding: 10px;
     margin: auto;
     
  
