@@ -20,6 +20,7 @@ body{
     position: absolute;
     background-color: rgb(181, 213, 255);
     width: 49%;
+    height: 150px;
     overflow: hidden;
     margin: auto;
     
@@ -79,12 +80,12 @@ ul{
   width: 10px;
   height: 10px;
   top: 50%;
-  left: 54%;
+  left: 28%;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   transform: translate(-50%, -50%) rotate(135deg);
 }
 .carousel__button--next::after {
-  left: 47%;
+  left: 62%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
