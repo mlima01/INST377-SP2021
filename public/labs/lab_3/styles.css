@@ -50,15 +50,14 @@ li {
 
 ul{
     height: 130px;
-    width: ;
     margin: 0;
     padding: 0;
     list-style: none;
     transition: margin-left 250ms;
 }
 
-.carousel__button--prev,
-.carousel__button--next {
+#carousel__button--prev,
+#carousel__button--next {
   position: absolute;
   top:50%;
   width: 3rem;
@@ -70,15 +69,15 @@ ul{
   z-index: 1001; /* Sit on top of everything */
   border: 1px solid rgba(0, 0, 0, 0);
 }
-.carousel__button--prev {
+#carousel__button--prev {
     left:0;
 }
-.carousel__button--next {
+#carousel__button--next {
     right:0;
 }
 
-.carousel__button--prev::after,
-.carousel__button--next::after {
+#carousel__button--prev::after,
+#carousel__button--next::after {
   content: " ";
   position: absolute;
   width: 10px;
@@ -89,7 +88,7 @@ ul{
   border-bottom: 2px solid black;
   transform: translate(-50%, -50%) rotate(135deg);
 }
-.carousel__button--next::after {
+#carousel__button--next::after {
   left: 62%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
