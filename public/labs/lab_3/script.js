@@ -1,36 +1,33 @@
-// const listElems = document.querySelectorAll('li').map(
-//   li.style.position = 'relative'
-//   && (li.insertAdjacentHTML('beforeend',
-//     "<span style= 'position:absolute;left:0;top:0'></span>"))
-// );
-
+/* eslint-disable no-console */
 // const listElems = document.querySelectorAll('li');
-function myFunction (item) {
+function myFunction (item, index) {
   // eslint-disable-next-line no-param-reassign
   item.style.position = 'relative';
   item.insertAdjacentHTML('beforeend',
-    "<span style= 'position:absolute;left:0;top:0'></span>");
+    `<span style= 'position:absolute;left:0;top:0'> ${index + 1}</span>`);
 }
-const listElems = document.querySelectorAll('li').forEach(myFunction);
 
-const list = document.querySelectorAll('ul');
+const listElems = document.querySelectorAll('.pics li');
+listElems.forEach(myFunction);
+
 const width = 130;
 const count = 3;
 let pos = 0;
-const next = document.getElementById('carousel__button--next');
-const prev = document.getElementById('carousel__button--prev');
+// const next = document.getElementById('carousel__button--next');
+// const prev = document.getElementById('carousel__button--prev');
 
-function moveNext() {
+document.getElementById('carousel__button--next').onclick = function moveNext() {
+  const list = document.querySelectorAll('.pics ul');
+
   pos -= width * count;
   pos = Math.max(pos, -width * (listElems.length - count));
   list.style.marginLeft = `${pos}px`;
-}
+};
 
-function movePrev() {
+document.getElementById('carousel__button--prev').onclick = function movePrev() {
+  const list = document.querySelectorAll('.pics ul');
   pos += width * count;
   pos = Math.min(pos, 0);
+  console.log(pos);
   list.style.marginLeft = `${pos}px`;
-}
-
-next.addEventListener('click', moveNext());
-prev.addEventListener('click', movePrev());
+};
