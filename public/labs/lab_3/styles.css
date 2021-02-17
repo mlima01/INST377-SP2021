@@ -13,6 +13,7 @@ body{
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        transform-style: preserve-3d;
       
 }
 
@@ -20,17 +21,13 @@ body{
     
     position: absolute;
     background-color: rgb(181, 213, 255);
-    width: 470px;
+    width: 49%;
     overflow: hidden;
     margin: auto;
     
  
 }
 
-.arrowprev {
-     display: block;
-     position: absolute;
- }
 
 .pics div {
     position: fixed;
@@ -53,14 +50,45 @@ li {
 
 ul{
     height: 130px;
-    width: 9999px;
+    width: ;
     margin: 0;
     padding: 0;
     list-style: none;
     transition: margin-left 250ms;
 }
 
-.arrownext {
-    display: block;
-    position: relative;
+.carousel__button--prev,
+.carousel__button--next {
+  position: absolute;
+  top:50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(255, 255, 255, 0);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer; 
+  z-index: 1001; /* Sit on top of everything */
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.carousel__button--prev {
+    left:0;
+  }
+  .carousel__button--next {
+    right:0;
+  }
+  .carousel__button--prev::after,
+.carousel__button--next::after {
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 54%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.carousel__button--next::after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
