@@ -6,8 +6,8 @@ document.addEventListener('click', (event) => {
   const width = 130;
   const count = 3;
   const pos = width * count;
-  const next = document.querySelector('.arrownext');
-  const prev = document.querySelector('.arrowprev');
+  const next = document.querySelector('.carousel__button--next');
+  const prev = document.querySelector('.carousel__button--prev');
 
   function myFunction2() {
     currentpos -= pos;
