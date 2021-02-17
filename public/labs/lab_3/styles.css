@@ -69,11 +69,12 @@ ul{
 }
 .carousel__button--prev {
     left:0;
-  }
-  .carousel__button--next {
+}
+.carousel__button--next {
     right:0;
-  }
-  .carousel__button--prev::after,
+}
+
+.carousel__button--prev::after,
 .carousel__button--next::after {
   content: " ";
   position: absolute;
