@@ -13,8 +13,9 @@ const listElems = document.querySelectorAll('.pics li');
 const width = 140;
 const count = 3;
 let pos = 0;
-// const next = document.getElementById('carousel__button--next');
-// const prev = document.getElementById('carousel__button--prev');
+
+const next = document.getElementById('carousel__button--next');
+const prev = document.getElementById('carousel__button--prev');
 const list = document.querySelectorAll('ul');
 function myFunction2 (item) {
   // eslint-disable-next-line no-param-reassign
@@ -34,8 +35,8 @@ function movePrev() {
   pos = Math.min(pos, 0);
 }
 
-// next.addEventListener('click', moveNext(), false);
-// prev.addEventListener('click', movePrev(), false);
+next.addEventListener('click', moveNext);
+prev.addEventListener('click', movePrev);
 
-document.querySelector('carousel__button--next').onclick = moveNext();
-document.querySelector('carousel__button--prev').onclick = movePrev();
+// document.querySelector('carousel__button--next').onclick = moveNext();
+// document.querySelector('carousel__button--prev').onclick = movePrev(); 
