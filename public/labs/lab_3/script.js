@@ -10,7 +10,7 @@
 const listElems = document.querySelectorAll('.pics li');
 // listElems.forEach(myFunction);
 
-const width = 140;
+const width = 165;
 const count = 3;
 let pos = 0;
 
