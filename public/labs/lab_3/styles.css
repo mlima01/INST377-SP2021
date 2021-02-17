@@ -7,10 +7,18 @@ body{
     background-color:rgb(245, 230, 242);
 }
 
+.carousel{
+    
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      
+}
 
 #firstdiv{
     
-    position: relative;
+    position: absolute;
     background-color: rgb(181, 213, 255);
     width: 470px;
     overflow: hidden;
@@ -43,8 +51,6 @@ li {
     display: inline-block;
 }
 
-
-
 ul{
     height: 130px;
     width: 9999px;
@@ -54,8 +60,7 @@ ul{
     transition: margin-left 250ms;
 }
 
-.arrownext{
+.arrownext {
     display: block;
-    right: 7px;
-    
+    position: relative;
 }
