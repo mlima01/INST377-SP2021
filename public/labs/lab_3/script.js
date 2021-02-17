@@ -1,8 +1,17 @@
-const listElems = document.querySelectorAll('li').map(
-  li.style.position = 'relative'
-  && (li.insertAdjacentHTML('beforeend',
-    "<span style= 'position:absolute;left:0;top:0'></span>"))
-);
+// const listElems = document.querySelectorAll('li').map(
+//   li.style.position = 'relative'
+//   && (li.insertAdjacentHTML('beforeend',
+//     "<span style= 'position:absolute;left:0;top:0'></span>"))
+// );
+
+// const listElems = document.querySelectorAll('li');
+function myFunction (item) {
+  // eslint-disable-next-line no-param-reassign
+  item.style.position = 'relative';
+  item.insertAdjacentHTML('beforeend',
+    "<span style= 'position:absolute;left:0;top:0'></span>");
+}
+const listElems = document.querySelectorAll('li').forEach(myFunction);
 
 const list = document.querySelectorAll('ul');
 const width = 130;
@@ -17,4 +26,11 @@ function moveNext() {
   list.style.marginLeft = `${pos}px`;
 }
 
-next.addEventListener('click', moveNext(), false);
+function movePrev() {
+  pos += width * count;
+  pos = Math.min(pos, 0);
+  list.style.marginLeft = `${pos}px`;
+}
+
+next.addEventListener('click', moveNext());
+prev.addEventListener('click', movePrev());
