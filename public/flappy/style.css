@@ -1,9 +1,13 @@
-.game-container {
-    width: 500px;
-    height:730px;
-    position:absolute;
+body {
+    display: flex;
 }
 
+.game-container {
+    width: 500px;
+    height: 730px;
+    position: absolute;
+    left: 80px;
+}
 .sky {
     background-color: blue;
     width: 500px;
