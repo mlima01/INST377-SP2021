@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function jump() {
     if (birdBottom < 500) birdBottom += 50;
     bird.style.bottom = `${birdBottom}px`;
-    console.log(birdBottom);
   }
   document.addEventListener('keyup', control);
 
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function gameOver() {
     clearInterval(gameTimerId);
-    console.log('game over');
     isGameOver = true;
     document.removeEventListener('keyup', control);
     ground.classList.add('ground');
