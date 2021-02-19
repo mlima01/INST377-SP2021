@@ -11,7 +11,7 @@ body {
 
 .border-left {
     width: 100px;
-    height: 790px;
+    height: 770px;
     position:  absolute;
     background-color: white;
     z-index: +2;
