@@ -3,5 +3,6 @@
     "viewportHeight": 800,
     "viewportWidth": 1280,
     "chromeWebSecurity":false,
+    "pageLoadTimeout":70000,
     "pluginsFile": "cypress/plugins/index.cjs"
 }
