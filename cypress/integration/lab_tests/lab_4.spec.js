@@ -26,7 +26,7 @@ describe('Lab 4', () => {
     cy.fixture('test_values').then((json) => {
       cy.get('h1')
         .then(($hh1) => {
-          const [name, lab, title] = [json.name, 'lab 4', $hh1.text()].map((m) => m.toUpperCase());
+          const [name, lab, title] = [json.name, '/labs/lab_4', $hh1.text()].map((m) => m.toUpperCase());
           expect(title.includes(name)).to.be.true;
           expect(title.includes(lab)).to.be.true;
         });
