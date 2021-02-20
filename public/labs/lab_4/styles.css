@@ -4,9 +4,13 @@ body {
     color: #fff;
     padding: 50px 0;
 }
-
+.header1 {
+    display: block;
+    text-align: center;
+    padding: inherit;
+}
 .flex-outer li,
-.flex-inner {
+.flex-inner{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
