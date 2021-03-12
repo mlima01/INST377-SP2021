@@ -1,6 +1,7 @@
 function mapInit() {
-  // follow the Leaflet Getting Started tutorial here
-  return map;
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+    return mymap;
 }
 
 async function dataHandler(mapObjectFromFunction) {
