@@ -1,5 +1,6 @@
+/* eslint-disable max-len */
 function mapInit() {
-  const mymap = L.map('mapid').setView([51.505, -0.09], 13);
+  const mymap = L.map('mapid').setView([38.98, -76.93], 13);
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -8,49 +9,40 @@ function mapInit() {
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibWVsaTAxIiwiYSI6ImNrbTZ0cW9idjByZ2YycHVzcGVreXFjZXUifQ.pz0ZvuXltg88sWbXeo33ag'
   }).addTo(mymap);
-  const marker = L.marker([51.5, -0.09]).addTo(mymap);
   return mymap;
 }
 
 async function dataHandler(mymap) {
-  // use your assignment 1 data handling code here sorting and search code
-  // and target mapObjectFromFunction to attach markers
-  const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-  const request = await fetch(endpoint);
-  const restaurants = await request.json();
+  const searchForm = document.querySelector('#search-form');
+  const search = document.querySelector('#search');
+  const targetList = document.querySelector('.target-list');
 
-  function findMatches(zipToMatch, restaurants) {
-    return restaurants.filter((place) => {
-      const regex = new RegExp(zipToMatch, 'gi');
-      return place.zip.match(regex) || place.name.match(regex) || place.category.match(regex);
+  const request = await fetch('/api');
+  const data = await request.json();
+
+  searchForm.addEventListener('submit', async (event) => {
+  // targetList.innerText == ''
+    event.preventDefault();
+    console.log('form submitted');
+    const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
+    console.table(filtered);
+
+    filtered.forEach((item) => {
+      const longLat = item.geocoded_column_1.coordinates;
+      console.log('markerLongLat', longLat[0], longLat[1]);
+      const marker = L.marker([longLat[1], longLat[0]]).addTo(mymap);
+
+      const appendItem = document.createElement('li');
+      appendItem.classList.add('block');
+      appendItem.classList.add('list-item');
+      appendItem.innerHTML = `<div class='list-header is-size-5 is-primary'> ${item.name}
+              </div>
+              <address class='s-size-6'>${item.address_line_1} </br> ${item.zip}</address>`;
+      targetList.append(appendItem);
     });
-  }
-
-  const searchInput = document.querySelector('.label');
-  const control = document.querySelector('.control');
-  function displayMatches(event) {
-    const matchArray = findMatches(event.target.value, restaurants);
-    const html = matchArray.map((place) => {
-      const regex = RegExp(event.target.value, 'g');
-      const restName = place.name.replace(regex, `<span class="hl">${event.target.value}</span>`);
-      // const restZip = place.zip.replace(regex, `<span class="hl">${event.target.value}</span>`);
-      return `
-            <li class="box is-primary">
-                <span class="name">${restName}</span></br>
-                <span class="category">${place.category}</span></br>
-                <span class="address">${place.address_line_1} </span></br>
-                <span class="address">${place.state} </span>
-                <span class="address">${place.zip} </span>
-            </li>
-            `;
-    }).join('');
-    control.innerHTML = html;
-  }
-
-  //   const searchInput = document.querySelector('.label');
-  //   const control = document.querySelector('.control');
-  searchInput.addEventListener('change', displayMatches);
-  searchInput.addEventListener('keyup', (evt) => { displayMatches(evt); });
+  });
+//   // use your assignment 1 data handling code here sorting and search code
+//   // and target mapObjectFromFunction to attach markers
 }
 
 async function windowActions() {
