@@ -12,7 +12,7 @@ function mapInit() {
   return mymap;
 }
 
-async function dataHandler(mymap) {
+async function dataHandler(mapObjectFromFunction) {
   const searchForm = document.querySelector('#search-form');
   const search = document.querySelector('#search');
   const targetList = document.querySelector('.target-list');
@@ -29,8 +29,8 @@ async function dataHandler(mymap) {
 
     filtered.forEach((item) => {
       const longLat = item.geocoded_column_1.coordinates;
-      console.log('markerLongLat', longLat[0], longLat[1]);
-      const marker = L.marker([longLat[1], longLat[0]]).addTo(mymap);
+      console.log('markerLongLat', longLat[1], longLat[0]);
+      const marker = L.marker([longLat[1], longLat[0]]).addTo(mapObjectFromFunction);
 
       const appendItem = document.createElement('li');
       appendItem.classList.add('block');
