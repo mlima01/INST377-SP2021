@@ -1,2 +1,9 @@
 #mapid { height: 350px; 
 }
+
+.list-item{
+    border-radius: 25px;
+    padding: 15px;
+    background: rgb(85, 0, 85);
+    background: linear-gradient(60deg, rgb(202, 200, 250) 2%, rgb(226, 190, 255) 35%, rgb(134, 231, 250) 98%);
+}
