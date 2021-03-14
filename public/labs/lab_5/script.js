@@ -51,8 +51,8 @@ async function dataHandler(mymap) {
 }
 
 async function windowActions() {
-  const map = mapInit();
-  await dataHandler(map);
+  const mymap = mapInit();
+  await dataHandler(mymap);
 }
 
 window.onload = windowActions;
