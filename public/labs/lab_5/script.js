@@ -8,6 +8,7 @@ function mapInit() {
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibWVsaTAxIiwiYSI6ImNrbTZ0cW9idjByZ2YycHVzcGVreXFjZXUifQ.pz0ZvuXltg88sWbXeo33ag'
   }).addTo(mymap);
+  const marker = L.marker([51.5, -0.09]).addTo(mymap);
   return mymap;
 }
 
@@ -25,6 +26,8 @@ async function dataHandler(mymap) {
     });
   }
 
+  const searchInput = document.querySelector('.label');
+  const control = document.querySelector('.control');
   function displayMatches(event) {
     const matchArray = findMatches(event.target.value, restaurants);
     const html = matchArray.map((place) => {
@@ -44,8 +47,8 @@ async function dataHandler(mymap) {
     control.innerHTML = html;
   }
 
-  const searchInput = document.querySelector('.label');
-  const control = document.querySelector('.control');
+  //   const searchInput = document.querySelector('.label');
+  //   const control = document.querySelector('.control');
   searchInput.addEventListener('change', displayMatches);
   searchInput.addEventListener('keyup', (evt) => { displayMatches(evt); });
 }
