@@ -23,4 +23,33 @@ function createDoodler() {
   doodler.style.left = `${doodlerLeftSpace}px`;
   doodler.style.bottom = `${doodlerBottomSpace}px`;
 }
-createDoodler();
+
+class Platform {
+    constructor(newPlatBottom){
+        this.bottom = newPlatBottom
+        this.left = Math.random() * 315
+        this.visual = document.createElement('div')
+
+        const visual = this.visual
+        visual.classList.add('platform')
+        visual.style.left = this.left + 'px'
+        visual.style.bottom = this.bottom + 'px'
+    }
+}
+
+function createPlatforms() {
+  for (let i = 0; i < platformCount; i++) {
+    let platformSpace = 600 / platformCount;
+    let newPlatBottom = 100 + i * platGap
+    let newPlatform = new Platform()
+
+  }
+}
+
+function start() {
+  if (!isGameOver) {
+    createDoodler();
+  }
+}
+// attach to a button
+start();
