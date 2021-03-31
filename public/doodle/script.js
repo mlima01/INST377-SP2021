@@ -1,4 +1,4 @@
-const { create } = require("cypress/types/lodash");
+const { create } = require('cypress/types/lodash');
 
 const grid = document.querySelector('.grid');
 const doodler = document.createElement('div');
@@ -19,9 +19,8 @@ const isGoingRight = false;
 let leftTimerId;
 let rightTimerId;
 
-function createDoodler(){
-    grid.appendChild(doodler)
-    doodler.classList.add('doodler')
+function createDoodler() {
+  grid.appendChild(doodler);
+  doodler.classList.add('doodler');
 }
-createDoodler()
-
+createDoodler();
