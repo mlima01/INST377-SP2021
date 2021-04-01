@@ -60,6 +60,7 @@ function movePlatforms() {
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove('platform');
           platforms.shift(); // gets rid of the first item of the array
+          score++
           let newPlatform = new Platform(600);
           platforms.push(newPlatform);
       }
@@ -70,8 +71,15 @@ function movePlatforms() {
 function gameOver() {
   console.log('Game Over');
   isGameOver = true;
+  while (grid.firstChild) {
+    console.log('remove');
+    grid.removeChild(grid.firstChild);
+  }
+  grid.innerHTML = score;
   clearInterval(upTimerId);
   clearInterval(downTimerId);
+  clearInterval(leftTimerId);
+  clearInterval(rightTimerId);
 }
 
 function jump() {
