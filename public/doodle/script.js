@@ -1,3 +1,5 @@
+const { set } = require("cypress/types/lodash");
+
 const grid = document.querySelector('.grid');
 const doodler = document.createElement('div');
 const isGameOver = false;
@@ -48,9 +50,21 @@ function createPlatforms() {
   }
 }
 
+function movePlatforms() {
+  if (doodlerBottomSpace > 200) {
+    platforms.forEach((platform) => {
+      platform.bottom -= 4;
+      const {visual} = platform;
+      visual.style.bottom = `${platform.bottom}px`;
+    });
+  }
+}
+
 function start() {
   if (!isGameOver) {
     createDoodler();
+    createPlatforms();
+    setInterval(movePlatforms, 30);
   }
 }
 // attach to a button
