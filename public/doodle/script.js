@@ -40,7 +40,7 @@ class Platform {
 
 function createPlatforms() {
   for (let i = 0; i < platformCount; i++) {
-    const platformSpace = 600 / platformCount;
+    const platGap = 600 / platformCount;
     const newPlatBottom = 100 + i * platGap;
     const newPlatform = new Platform(newPlatBottom);
     platforms.push(newPlatform);
