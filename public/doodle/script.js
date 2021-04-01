@@ -42,7 +42,7 @@ function createPlatforms() {
   for (let i = 0; i < platformCount; i++) {
     const platformSpace = 600 / platformCount;
     const newPlatBottom = 100 + i * platGap;
-    const newPlatform = new Platform();
+    const newPlatform = new Platform(newPlatBottom);
     platforms.push(newPlatform);
     console.log(platforms);
   }
