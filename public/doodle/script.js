@@ -1,10 +1,10 @@
 const grid = document.querySelector('.grid');
 const doodler = document.createElement('div');
 let isGameOver = false;
-let speed = 3;
-let platformCount = 5;
-let platforms = [];
-let score = 0;
+const speed = 3;
+const platformCount = 5;
+const platforms = [];
+const score = 0;
 let doodlerLeftSpace = 50;
 const startPoint = 150;
 let doodlerBottomSpace = startPoint;
@@ -12,14 +12,15 @@ const gravity = 0.9;
 let upTimerId;
 let downTimerId;
 const isJumping = true;
-let isGoingLeft = false;
-let isGoingRight = false;
+const isGoingLeft = false;
+const isGoingRight = false;
 let leftTimerId;
 let rightTimerId;
 
 function createDoodler() {
   grid.appendChild(doodler);
   doodler.classList.add('doodler');
+  doodlerLeftSpace = platforms[0].left;
   doodler.style.left = `${doodlerLeftSpace}px`;
   doodler.style.bottom = `${doodlerBottomSpace}px`;
 }
@@ -86,10 +87,22 @@ function jump() {
     }
   }, 30);
 }
+
+function control(event) {
+  doodler.style.bottom = `${doodlerBottomSpace}px`;
+  if (event.key === 'ArrowLeft') {
+    moveLeft();
+  } else if (event.key === 'ArrowRight') {
+    moveRight();
+  } else if (event.key === 'ArrowUp') {
+    moveStraight();
+  }
+}
+
 function start() {
   if (!isGameOver) {
-    createDoodler();
     createPlatforms();
+    createDoodler();
     setInterval(movePlatforms, 30);
     jump();
   }
