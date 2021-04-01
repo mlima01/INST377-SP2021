@@ -6,12 +6,12 @@ const platformCount = 5;
 const platforms = [];
 const score = 0;
 let doodlerLeftSpace = 50;
-const startPoint = 150;
+let startPoint = 150;
 let doodlerBottomSpace = startPoint;
 const gravity = 0.9;
 let upTimerId;
 let downTimerId;
-const isJumping = true;
+let isJumping = true;
 const isGoingLeft = false;
 const isGoingRight = false;
 let leftTimerId;
@@ -66,25 +66,42 @@ function gameOver() {
   clearInterval(downTimerId);
 }
 
-function fall() {
-  clearInterval(upTimerId);
-  downTimerId = setInterval(() => {
-    doodlerBottomSpace -= 5;
-    doodler.style.bottom = `${doodlerBottomSpace}px`;
-    if (doodlerBottomSpace <= 0) {
-      gameOver();
-    }
-  }, 30);
-}
-
 function jump() {
-  clear(downTimerId);
+  clearInterval(downTimerId);
+  isJumping = true;
   upTimerId = setInterval(() => {
     doodlerBottomSpace += 20;
     doodler.style.bottom = `${doodlerBottomSpace}px`;
     if (doodlerBottomSpace > 350) {
       fall();
     }
+  }, 30);
+}
+
+function fall() {
+  clearInterval(upTimerId);
+  isJumping = false;
+  downTimerId = setInterval(() => {
+    doodlerBottomSpace -= 5;
+    doodler.style.bottom = `${doodlerBottomSpace}px`;
+    if (doodlerBottomSpace <= 0) {
+      gameOver();
+    }
+    platforms.forEach((platform) => {
+      if (
+        (doodlerBottomSpace >= platform.bottom)
+          && (doodlerBottomSpace <= (platform.bottom + 15))
+          && ((doodlerLeftSpace + 60) >= platform.left)
+          && (doodlerLeftSpace <= (platform.left + 85))
+          && !isJumping
+      ) {
+        console.log('tick');
+        startPoint = doodlerBottomSpace;
+        jump();
+        console.log('start', startPoint);
+        isJumping = true;
+      }
+    });
   }, 30);
 }
 
